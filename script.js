@@ -5,10 +5,10 @@ const resultEl = document.getElementById("result");
 function calculateAge() {
   const birthdayValue = birthdayEl.value;
   if (birthdayValue === "") {
-    alert("Please enter your birthday");
+    alert("So, When were you born..??");
   } else {
     const age = getAge(birthdayValue);
-    resultEl.innerText = `Your age is ${age} ${age > 1 ? "years" : "year"} old`;
+    resultEl.innerText = `Your are ${age} ${age > 1 ? "years" : "year"} young`;
   }
 }
 

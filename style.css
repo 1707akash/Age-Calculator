@@ -2,11 +2,11 @@ body {
     margin: 0;
     padding: 20px;
     font-family: "Montserrat", sans-serif;
-    background-color: #f7f7f7;
+    background-color: #f1c6e1;
   }
   
   .container {
-    background-color: white;
+    background-color: rgb(240, 174, 174);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     max-width: 600px;
@@ -42,7 +42,7 @@ body {
   }
   
   button {
-    background-color: #007bff;
+    background-color: #d76f5d;
     color: white;
     border: none;
     padding: 10px 20px;
