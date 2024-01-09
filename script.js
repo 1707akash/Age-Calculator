@@ -1,31 +1,24 @@
-const btnEl = document.getElementById("btn");
-const birthdayEl = document.getElementById("birthday");
-const resultEl = document.getElementById("result");
+let birthdate= document.getElementById("birthday");
+let btn= document.getElementById("button");
 
-function calculateAge() {
-  const birthdayValue = birthdayEl.value;
-  if (birthdayValue === "") {
-    alert("So, When were you born..??");
-  } else {
-    const age = getAge(birthdayValue);
-    resultEl.innerText = `Your are ${age} ${age > 1 ? "years" : "year"} young`;
-  }
+btn.addEventListener("click", calculateAge);
+let para= document.querySelector("p");
+
+
+function calculateAge(){
+    let currDate= new Date();
+    // console.log(currDate);
+
+    let dob= new Date(birthdate.value);
+    // console.log(dob);
+
+    let age= currDate.getFullYear() -dob.getFullYear();
+    // console.log(age);
+    let monthGap= currDate.getMonth() - dob.getMonth();
+    if(monthGap<0 || monthGap===0 && currDate.getDate-dob.getDate>0){
+        age--;
+    }
+
+    para.innerText= `You are ${age} years young`;
+
 }
-
-function getAge(birthdayValue) {
-  const currentDate = new Date();
-  const birthdayDate = new Date(birthdayValue);
-  let age = currentDate.getFullYear() - birthdayDate.getFullYear();
-  const month = currentDate.getMonth() - birthdayDate.getMonth();
-
-  if (
-    month < 0 ||
-    (month === 0 && currentDate.getDate() < birthdayDate.getDate())
-  ) {
-    age--;
-  }
-
-  return age;
-}
-
-btnEl.addEventListener("click", calculateAge);
